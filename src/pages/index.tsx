@@ -34,6 +34,7 @@ export default function Home() {
         <button type="submit">Submit</button>
       </form>
       {/* <ChatResponse prompt={`Create 10 login related variable names with React`} /> */}
+      {promptValue && <ChatResponse prompt={promptValue} />}
     </QueryClientProvider>
   );
 }
