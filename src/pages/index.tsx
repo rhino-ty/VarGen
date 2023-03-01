@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import { getChatResponse } from "./api/chatai";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
@@ -8,6 +9,7 @@ interface ChatResponseProps {
 
 export default function Home() {
   const queryClient = new QueryClient();
+  const [promptValue, setPromptValue] = useState("");
 
   const ChatResponse = ({ prompt }: ChatResponseProps) => {
     const { data } = useQuery(["chatResponse", prompt], () => getChatResponse(prompt));
