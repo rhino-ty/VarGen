@@ -1,6 +1,7 @@
 import PromptInput from "@/components/PromptInput";
 import Head from "next/head";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 export default function Home() {
   const queryClient = new QueryClient();
@@ -14,6 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PromptInput />
+      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }
