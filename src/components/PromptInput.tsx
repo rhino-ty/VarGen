@@ -20,11 +20,15 @@ export default function PromptInput() {
   };
 
   const ChatResponse = ({ prompt }: ChatResponseProps) => {
-    const { data, isLoading } = useQuery(["chatResponse", prompt], () => getChatResponse(prompt));
+    const { data, isLoading } = useQuery(["chatResponse", prompt], () => getChatResponse(prompt), {
+      staleTime: Infinity,
+    });
 
-    return isLoading ? <div>Loading...</div> : <div>{data?.resText}</div>;
+    const result = !isLoading && data ? data.resText : "";
+
+    return <div>{result}</div>;
   };
-
+  // 이거 지금 이상하다 결과값이 나오는데 계속 한 5초마다? 새 결과값을 계속 받아온다 이러면 안되는데;;
   return (
     <>
       <form onSubmit={handleSubmit}>
