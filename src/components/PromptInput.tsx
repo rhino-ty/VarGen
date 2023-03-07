@@ -24,9 +24,9 @@ export default function PromptInput() {
       staleTime: Infinity,
     });
 
-    const result = !isLoading && data ? data.resText : "";
+    if (isLoading) return <div>Loading...</div>;
 
-    return <div>{result}</div>;
+    return <div>{data?.resText}</div>;
   };
   // 이거 지금 이상하다 결과값이 나오는데 계속 한 5초마다? 새 결과값을 계속 받아온다 이러면 안되는데;;
   return (
