@@ -5,9 +5,9 @@ import { QueryClient, useQuery } from "react-query";
 interface ChatResponseProps {
   prompt: string;
 }
+const queryClient = new QueryClient();
 
 export default function PromptInput() {
-  // const queryClient = new QueryClient();
   const [inputValue, setInputValue] = useState("");
   const [promptValue, setPromptValue] = useState("");
 
@@ -22,6 +22,7 @@ export default function PromptInput() {
   const ChatResponse = ({ prompt }: ChatResponseProps) => {
     const { data, isLoading } = useQuery(["chatResponse", prompt], () => getChatResponse(prompt), {
       staleTime: Infinity,
+      cacheTime: Infinity,
     });
 
     if (isLoading) return <div>Loading...</div>;
