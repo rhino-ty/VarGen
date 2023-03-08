@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 interface ChatResponseProps {
   prompt: string;
 }
+
 const queryClient = new QueryClient();
 
 export default function PromptInput() {
@@ -21,12 +22,18 @@ export default function PromptInput() {
   };
 
   const ChatResponse = ({ prompt }: ChatResponseProps) => {
-    const { data, isLoading } = useQuery(["chatResponse", prompt], () => getChatResponse(prompt), {
-      staleTime: Infinity,
-      cacheTime: Infinity,
-    });
+    const { data, isLoading, isFetching } = useQuery(
+      ["chatResponse", prompt],
+      () => getChatResponse(prompt),
+      {
+        staleTime: Infinity,
+        cacheTime: Infinity,
+      }
+    );
 
-    if (isLoading) return <div>Loading...</div>;
+    console.log(isLoading);
+
+    if (isLoading || isFetching) return <div>Loading...</div>;
 
     return <div>{data?.resText}</div>;
   };
