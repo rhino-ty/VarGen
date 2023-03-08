@@ -16,6 +16,7 @@ export default function PromptInput() {
     if (inputValue !== "") {
       // queryClient.invalidateQueries("chatResponse");
       setPromptValue(inputValue);
+      queryClient.removeQueries();
     }
   };
 
