@@ -1,13 +1,9 @@
 import PromptInput from "@/components/PromptInput";
 import Head from "next/head";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-
-const queryClient = new QueryClient();
 
 export default function Home() {
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Head>
         <title>Vargen</title>
         <meta name="description" content="변수 생성 앱" />
@@ -15,7 +11,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PromptInput />
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import { getChatResponse } from "@/pages/api/chatai";
 import { useState } from "react";
-import { QueryClient, useQuery } from "react-query";
+import { QueryClient, useQuery, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 interface ChatResponseProps {
   prompt: string;
@@ -13,10 +14,9 @@ export default function PromptInput() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    queryClient.invalidateQueries("chatResponse");
     if (inputValue !== "") {
-      // queryClient.invalidateQueries("chatResponse");
       setPromptValue(inputValue);
-      queryClient.removeQueries();
     }
   };
 
@@ -30,15 +30,16 @@ export default function PromptInput() {
 
     return <div>{data?.resText}</div>;
   };
-  // 이거 지금 이상하다 결과값이 나오는데 계속 한 5초마다? 새 결과값을 계속 받아온다 이러면 안되는데;;
+
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <form onSubmit={handleSubmit}>
         <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
         <button type="submit">Submit</button>
       </form>
-      {/* <ChatResponse prompt={`Create 10 login related variable names with React`} /> */}
+      {/* <ChatResponse prompt={`Create 10 게시판 related variable names with camelCase`} /> */}
       {promptValue && <ChatResponse prompt={promptValue} />}
-    </>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
 }
