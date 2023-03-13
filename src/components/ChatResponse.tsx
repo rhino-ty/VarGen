@@ -17,5 +17,14 @@ export const ChatResponse = ({ prompt }: ChatResponseProps) => {
 
   if (isLoading || isFetching) return <div>Loading...</div>;
 
+  const variableArr = data?.resText
+    .replace(/^\d+\./gm, "")
+    .replace(/\n/g, "")
+    .trim()
+    .split(/\s+/)
+    .slice(0, 10);
+
+  console.log({ variableArr });
+
   return <div>{data?.resText}</div>;
 };
