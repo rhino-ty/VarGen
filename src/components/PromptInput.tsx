@@ -1,11 +1,7 @@
-import { getChatResponse } from "@/pages/api/chatai";
 import { useState } from "react";
-import { QueryClient, useQuery, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-
-interface ChatResponseProps {
-  prompt: string;
-}
+import { ChatResponse } from "./ChatResponse";
 
 const queryClient = new QueryClient();
 
@@ -19,23 +15,6 @@ export default function PromptInput() {
     if (inputValue !== "") {
       setPromptValue(inputValue);
     }
-  };
-
-  const ChatResponse = ({ prompt }: ChatResponseProps) => {
-    const { data, isLoading, isFetching } = useQuery(
-      ["chatResponse", prompt],
-      () => getChatResponse(prompt),
-      {
-        staleTime: Infinity,
-        cacheTime: Infinity,
-      }
-    );
-
-    console.log(isLoading);
-
-    if (isLoading || isFetching) return <div>Loading...</div>;
-
-    return <div>{data?.resText}</div>;
   };
 
   return (
