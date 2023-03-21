@@ -3,5 +3,22 @@
 @tailwind utilities;
 
 .bg-primary {
-  @apply bg-slate-50 dark:bg-slate-800 ease-in-out duration-200;
+  @apply bg-slate-50 dark:bg-slate-800 ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-slate-900 dark:text-slate-50 ease-in-out;
+}
+
+a {
+  @apply text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-50 ease-in-out;
+}
+
+p {
+  @apply text-slate-700 dark:text-slate-400 ease-in-out;
 }
