@@ -5,12 +5,12 @@ import { ChatResponse } from "./ChatResponse";
 
 const queryClient = new QueryClient();
 
-type CountVariable = 5 | 10 | 20;
+type CountVariable = 5 | 10 | 20 | 0;
 type NamingConvention = "camelCase" | "PascalCase" | "snake_case" | "";
 
 export default function PromptInput() {
   // const [inputValue, setInputValue] = useState("");
-  const [countVariable, setCountVariable] = useState<CountVariable>(5);
+  const [countVariable, setCountVariable] = useState<CountVariable>(0);
   const [subject, setSubject] = useState<string>("");
   const [namingConvention, setNamingConvention] = useState<NamingConvention>("");
   const [promptValue, setPromptValue] = useState<string>("");
@@ -24,6 +24,18 @@ export default function PromptInput() {
     //   if (inputValue !== "") {
     //     setPromptValue(inputValue);
     //   }
+  };
+
+  const handleCountChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setCountVariable(e.target.value as CountVariable);
+  };
+
+  const handleSubjectChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSubject(e.target.value);
+  };
+
+  const handleNamingConventionChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setNamingConvention(e.target.value as NamingConvention);
   };
 
   return (
