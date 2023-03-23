@@ -65,7 +65,7 @@ export default function PromptInput() {
           </select>
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <button type="submit">제출</button>
       </form>
 
       {/* <ChatResponse prompt={`Create 10 게시판 related variable names with camelCase`} /> */}
