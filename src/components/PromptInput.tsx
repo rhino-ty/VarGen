@@ -82,9 +82,9 @@ export default function PromptInput() {
               onChange={handleNamingConventionChange}
               className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             >
-              <option value="camelCase">camelCase</option>
-              <option value="PascalCase">PascalCase</option>
-              <option value="snake_case">snake_case</option>
+              <option value="camelCase">🐪 camelCase</option>
+              <option value="PascalCase">⚙️ PascalCase</option>
+              <option value="snake_case">🐍 snake_case</option>
             </select>
           </div>
         </div>
