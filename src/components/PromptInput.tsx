@@ -40,10 +40,13 @@ export default function PromptInput() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <form onSubmit={handleSubmit} className="container px-5 mx-auto flex flex-col">
+      <form
+        onSubmit={handleSubmit}
+        className="container px-5 mx-auto flex flex-col items-center justify-center space-y-4"
+      >
         {/* <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} /> */}
-        <div className="flex flex-row text-center">
-          <div className="flex flex-col gap-2">
+        <div className="flex flex-row justify-center items-center space-x-4">
+          <div className="flex flex-col">
             <label htmlFor="count" className="text-gray-700">
               Number of Variables
             </label>
@@ -59,7 +62,7 @@ export default function PromptInput() {
             </select>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col">
             <label htmlFor="subject" className="text-gray-700">
               Subject
             </label>
@@ -72,7 +75,7 @@ export default function PromptInput() {
             />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col">
             <label htmlFor="namingConvention" className="text-gray-700">
               Naming Convention
             </label>
