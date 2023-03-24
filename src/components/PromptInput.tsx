@@ -40,6 +40,8 @@ export default function PromptInput() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <h1>VarGen</h1>
+      <h3>변수를 생성해보세요!</h3>
       <form
         onSubmit={handleSubmit}
         className="container px-5 mx-auto flex flex-col items-center justify-center space-y-4"
