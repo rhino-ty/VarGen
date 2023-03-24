@@ -40,32 +40,58 @@ export default function PromptInput() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="container px-5 mx-auto flex flex-col">
         {/* <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} /> */}
-        <label>
-          Number of Variables:
-          <select value={countVariable} onChange={handleCountChange}>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-          </select>
-        </label>
-        <br />
-        <label>
-          Subject:
-          <input type="text" value={subject} onChange={handleSubjectChange} />
-        </label>
-        <br />
-        <label>
-          Naming Convention:
-          <select value={namingConvention} onChange={handleNamingConventionChange}>
-            <option value="camelCase">camelCase</option>
-            <option value="PascalCase">PascalCase</option>
-            <option value="snake_case">snake_case</option>
-          </select>
-        </label>
-        <br />
-        <button type="submit">제출</button>
+        <div className="flex flex-row text-center">
+          <div className="flex flex-col gap-2">
+            <label htmlFor="count" className="text-gray-700">
+              Number of Variables
+            </label>
+            <select
+              id="count"
+              value={countVariable}
+              onChange={handleCountChange}
+              className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="subject" className="text-gray-700">
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              value={subject}
+              onChange={handleSubjectChange}
+              className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="namingConvention" className="text-gray-700">
+              Naming Convention
+            </label>
+            <select
+              id="namingConvention"
+              value={namingConvention}
+              onChange={handleNamingConventionChange}
+              className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="camelCase">camelCase</option>
+              <option value="PascalCase">PascalCase</option>
+              <option value="snake_case">snake_case</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" className="w-14 py-2 submit-button">
+          제출
+        </button>
       </form>
 
       {/* <ChatResponse prompt={`Create 10 게시판 related variable names with camelCase`} /> */}
