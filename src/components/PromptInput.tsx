@@ -40,17 +40,16 @@ export default function PromptInput() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <h1>VarGen</h1>
-      <h3>변수를 생성해보세요!</h3>
-      <form
-        onSubmit={handleSubmit}
-        className="container px-5 mx-auto flex flex-col items-center justify-center space-y-4"
-      >
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="items-center">VarGen</h1>
+        <h3 className="items-center">변수를 생성해보세요!</h3>
+      </div>
+      <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center">
         {/* <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} /> */}
         <div className="flex flex-row justify-center items-center space-x-4">
           <div className="flex flex-col">
             <label htmlFor="count" className="text-gray-700 flex justify-center">
-              Number of Variables
+              Count
             </label>
             <select
               id="count"
@@ -98,7 +97,6 @@ export default function PromptInput() {
           제출
         </button>
       </form>
-
       {/* <ChatResponse prompt={`Create 10 게시판 related variable names with camelCase`} /> */}
       {promptValue && <ChatResponse prompt={promptValue} />}
       <ReactQueryDevtools />
