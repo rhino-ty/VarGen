@@ -40,13 +40,13 @@ export default function PromptInput() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="items-center">VarGen</h1>
-        <h3 className="items-center">변수를 생성해보세요!</h3>
+      <div className="flex flex-col items-center justify-center my-5">
+        <h1 className="text-6xl">VarGen</h1>
+        <h3 className="text-3xl mt-5">변수를 생성해보세요!</h3>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center">
         {/* <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} /> */}
-        <div className="flex flex-row justify-center items-center space-x-4">
+        <div className="flex flex-row justify-center items-center space-x-4 mb-10">
           <div className="flex flex-col">
             <label htmlFor="count" className="text-gray-700 flex justify-center">
               Count
@@ -55,7 +55,7 @@ export default function PromptInput() {
               id="count"
               value={countVariable}
               onChange={handleCountChange}
-              className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="px-4 py-2 rounded-md shadow-sm outline-none"
             >
               <option value="5">5</option>
               <option value="10">10</option>
@@ -72,7 +72,7 @@ export default function PromptInput() {
               id="subject"
               value={subject}
               onChange={handleSubjectChange}
-              className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="px-4 py-2 rounded-md shadow-sm outline-none"
             />
           </div>
 
@@ -84,7 +84,7 @@ export default function PromptInput() {
               id="namingConvention"
               value={namingConvention}
               onChange={handleNamingConventionChange}
-              className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="px-4 py-2  rounded-md shadow-sm outline-none"
             >
               <option value="camelCase">🐪 camelCase</option>
               <option value="PascalCase">⚙️ PascalCase</option>
@@ -93,7 +93,7 @@ export default function PromptInput() {
           </div>
         </div>
 
-        <button type="submit" className="w-14 py-2 submit-button">
+        <button type="submit" className="w-14 py-2 submit-button ">
           제출
         </button>
       </form>
