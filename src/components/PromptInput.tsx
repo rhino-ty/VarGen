@@ -47,7 +47,7 @@ export default function PromptInput() {
       <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center">
         {/* <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} /> */}
         <div className="flex flex-row justify-center items-center space-x-4 mb-10">
-          <div className="flex flex-col">
+          <div className="flex flex-col px-2">
             <label htmlFor="count" className="text-gray-700 flex justify-center">
               Count
             </label>
@@ -63,20 +63,7 @@ export default function PromptInput() {
             </select>
           </div>
 
-          <div className="flex flex-col">
-            <label htmlFor="subject" className="text-gray-700 flex justify-center">
-              Subject
-            </label>
-            <input
-              type="text"
-              id="subject"
-              value={subject}
-              onChange={handleSubjectChange}
-              className="px-4 py-2 rounded-md shadow-sm outline-none"
-            />
-          </div>
-
-          <div className="flex flex-col">
+          <div className="flex flex-col px-2">
             <label htmlFor="namingConvention" className="text-gray-700 flex justify-center">
               Naming Convention
             </label>
@@ -91,10 +78,24 @@ export default function PromptInput() {
               <option value="snake_case">🐍 snake_case</option>
             </select>
           </div>
+
+          <div className="flex flex-col px-2">
+            <label htmlFor="subject" className="text-gray-700 flex justify-center">
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              value={subject}
+              onChange={handleSubjectChange}
+              placeholder="e.g. list, 게시판"
+              className="px-4 py-2 rounded-md shadow-sm outline-none"
+            />
+          </div>
         </div>
 
-        <button type="submit" className="w-14 py-2 submit-button ">
-          제출
+        <button type="submit" className="px-6 py-4 submit-button text-2xl ">
+          생성하기
         </button>
       </form>
       {/* <ChatResponse prompt={`Create 10 게시판 related variable names with camelCase`} /> */}
