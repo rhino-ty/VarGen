@@ -49,7 +49,7 @@ export default function PromptInput() {
         {/* <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} /> */}
         <div className="flex flex-row justify-center items-center space-x-4">
           <div className="flex flex-col">
-            <label htmlFor="count" className="text-gray-700">
+            <label htmlFor="count" className="text-gray-700 flex justify-center">
               Number of Variables
             </label>
             <select
@@ -65,7 +65,7 @@ export default function PromptInput() {
           </div>
 
           <div className="flex flex-col">
-            <label htmlFor="subject" className="text-gray-700">
+            <label htmlFor="subject" className="text-gray-700 flex justify-center">
               Subject
             </label>
             <input
@@ -78,7 +78,7 @@ export default function PromptInput() {
           </div>
 
           <div className="flex flex-col">
-            <label htmlFor="namingConvention" className="text-gray-700">
+            <label htmlFor="namingConvention" className="text-gray-700 flex justify-center">
               Naming Convention
             </label>
             <select
