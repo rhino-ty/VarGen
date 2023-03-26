@@ -1,6 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
 import { ChatResponse } from "./ChatResponse";
 
 const queryClient = new QueryClient();
@@ -100,7 +99,6 @@ export default function PromptInput() {
       </form>
       {/* <ChatResponse prompt={`Create 10 게시판 related variable names with camelCase`} /> */}
       {promptValue && <ChatResponse prompt={promptValue} />}
-      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }
