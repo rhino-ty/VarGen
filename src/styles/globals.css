@@ -17,7 +17,7 @@ h4,
 h5,
 h6,
 .hN {
-  @apply text-slate-900 dark:text-slate-50 ease-in-out;
+  @apply text-slate-900 dark:text-slate-100 ease-in-out;
 }
 
 a {
