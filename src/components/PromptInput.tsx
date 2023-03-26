@@ -87,6 +87,7 @@ export default function PromptInput() {
               id="subject"
               value={subject}
               onChange={handleSubjectChange}
+              autoComplete="off"
               placeholder="e.g. list, 게시판"
               className="px-4 py-2 rounded-md shadow-sm outline-none bg-slate-100 dark:bg-zinc-800"
             />
