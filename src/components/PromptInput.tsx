@@ -58,7 +58,8 @@ export default function PromptInput() {
             >
               <option value="5">5</option>
               <option value="10">10</option>
-              <option value="20">20</option>
+              {/* 20은 토큰수가 너무 많이 나와 삭제,,ㅠㅠ */}
+              {/* <option value="20">20</option> */}
             </select>
           </div>
 
