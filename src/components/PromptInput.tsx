@@ -55,7 +55,7 @@ export default function PromptInput() {
               id="count"
               value={countVariable}
               onChange={handleCountChange}
-              className="px-4 py-2 rounded-md shadow-sm outline-none"
+              className="px-4 py-2 rounded-md shadow-sm outline-none bg-slate-100 dark:bg-zinc-800"
             >
               <option value="5">5</option>
               <option value="10">10</option>
@@ -71,7 +71,7 @@ export default function PromptInput() {
               id="namingConvention"
               value={namingConvention}
               onChange={handleNamingConventionChange}
-              className="px-4 py-2  rounded-md shadow-sm outline-none"
+              className="px-4 py-2 rounded-md shadow-sm outline-none bg-slate-100 dark:bg-zinc-800"
             >
               <option value="camelCase">🐪 camelCase</option>
               <option value="PascalCase">⚙️ PascalCase</option>
@@ -89,7 +89,7 @@ export default function PromptInput() {
               value={subject}
               onChange={handleSubjectChange}
               placeholder="e.g. list, 게시판"
-              className="px-4 py-2 rounded-md shadow-sm outline-none"
+              className="px-4 py-2 rounded-md shadow-sm outline-none bg-slate-100 dark:bg-zinc-800"
             />
           </div>
         </div>
