@@ -2,7 +2,7 @@ import Header from "./Header";
 
 export default function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div className="bg-primary ">
+    <div>
       <Header />
       <div>{children}</div>
     </div>
