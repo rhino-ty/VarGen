@@ -29,7 +29,7 @@ export const ChatResponse = ({ prompt }: ChatResponseProps) => {
   const variableList = variableArr?.map((vari) => (
     <div key={vari} className="lg:w-1/4 md:w-1/2 p-4 w-full">
       <div className="mt-4">
-        <h2 className="text-gray-900 title-font text-lg font-medium">{vari}</h2>
+        <h2 className="text-gray-900 title-font text-3xl font-medium text-center">{vari}</h2>
       </div>
     </div>
   ));
@@ -37,7 +37,7 @@ export const ChatResponse = ({ prompt }: ChatResponseProps) => {
   return (
     <div>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container p-10 mx-auto">
           <div className="flex flex-wrap -m-4">{variableList}</div>
         </div>
       </section>
