@@ -17,12 +17,14 @@ export default function PromptInput() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     queryClient.invalidateQueries("chatResponse");
-    setPromptValue(
-      `Create ${countVariable} ${subject} related variable names with ${namingConvention}`
-    );
-    //   if (inputValue !== "") {
-    //     setPromptValue(inputValue);
-    //   }
+
+    if (subject !== "") {
+      setPromptValue(
+        `Create ${countVariable} ${subject} related variable names with ${namingConvention}`
+      );
+    } else {
+      alert("변수 생성 관련 주제를 입력해주세요!");
+    }
   };
 
   const handleCountChange = (e: ChangeEvent<HTMLSelectElement>) => {
