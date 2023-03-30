@@ -24,9 +24,11 @@ export const ChatResponse = ({ prompt }: ChatResponseProps) => {
     .slice(0, 10);
 
   const variableList = variableArr?.map((vari) => (
-    <div key={vari} className="lg:w-1/4 md:w-1/2 p-4 w-full">
+    <div key={vari} className="lg:w-1/4 md:w-1/2 p-4 w-full overflow-hidden">
       <div className="mt-4">
-        <h2 className="text-gray-900 font-sans text-3xl font-medium text-center">{vari}</h2>
+        <h2 className="text-gray-900 font-sans text-3xl font-medium text-center">
+          {vari.length > 15 ? vari.slice(0, 15) + "..." : vari}
+        </h2>
       </div>
     </div>
   ));
