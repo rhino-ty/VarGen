@@ -20,7 +20,7 @@ export default function PromptInput() {
 
     if (subject !== "") {
       setPromptValue(
-        `Create ${countVariable} ${subject} related variable names with ${namingConvention}`
+        `Create ${countVariable} ${subject} related variable names with ${namingConvention} in English`
       );
     } else {
       alert("변수 생성 관련 주제를 입력해주세요!");
