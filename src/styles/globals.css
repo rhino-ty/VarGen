@@ -16,7 +16,8 @@
 
 .variable-tooltip:hover:after {
   content: attr(title);
-  @apply absolute top-[-30px] left-1/4 bg-black dark:bg-white text-white dark:text-black px-3 rounded whitespace-nowrap text-lg;
+  @apply absolute top-[-30px] bg-black dark:bg-white text-white dark:text-black px-3 rounded whitespace-nowrap text-lg;
+  left: 10%;
 }
 
 /* .variable-tooltip:hover:after {
