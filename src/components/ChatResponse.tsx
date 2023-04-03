@@ -1,6 +1,7 @@
 import { getChatResponse } from "@/pages/api/chatai";
 import { useQuery } from "react-query";
 import Loading from "./Loading";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 interface ChatResponseProps {
   prompt: string;
@@ -28,9 +29,11 @@ export const ChatResponse = ({ prompt }: ChatResponseProps) => {
       <div className="mt-4">
         {vari.length > 15 ? (
           <h2 className="variable cursor-pointer relative">
-            <span className="variable-tooltip" title={vari}>
-              {vari.slice(0, 15) + "..."}
-            </span>
+            <CopyToClipboard text={vari}>
+              <span className="variable-tooltip" title={vari}>
+                {vari.slice(0, 15) + "..."}
+              </span>
+            </CopyToClipboard>
           </h2>
         ) : (
           <h2 className="variable">{vari}</h2>
