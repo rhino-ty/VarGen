@@ -20,6 +20,10 @@
   left: 10%;
 }
 
+.variable-menu-container {
+  @apply flex flex-col px-2 mb-2 sm:mb-0;
+}
+
 /* .variable-tooltip:hover:after {
   content: attr(title);
   position: absolute;
