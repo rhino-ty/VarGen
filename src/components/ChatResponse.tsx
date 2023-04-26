@@ -14,6 +14,7 @@ export const ChatResponse = ({ prompt }: ChatResponseProps) => {
     {
       staleTime: Infinity,
       cacheTime: Infinity,
+      retry: 2, // 요청 실패시 2번까지 재시도
     }
   );
 
