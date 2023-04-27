@@ -2,6 +2,7 @@ import { getChatResponse } from "@/pages/api/chatai";
 import { useQuery } from "react-query";
 import Loading from "./Loading";
 import CopyToClipboard from "react-copy-to-clipboard";
+import { AxiosError } from "axios";
 
 interface ChatResponseProps {
   prompt: string;
@@ -12,9 +13,19 @@ export const ChatResponse = ({ prompt }: ChatResponseProps) => {
     ["chatResponse", prompt],
     () => getChatResponse(prompt),
     {
+      refetchOnWindowFocus: false, // 사용자가 사용하는 윈도우가 다른 곳을 갔다가 다시 화면으로 돌아오면 이 함수를 재실행하지 못하게
       staleTime: Infinity,
       cacheTime: Infinity,
+      enabled: true, // 요청 실패시 재시도하지 않음
       retry: 2, // 요청 실패시 2번까지 재시도
+      onError: (error: AxiosError) => {
+        if (error.response?.status === 429) {
+          alert("API 토큰이 만료되었습니다.");
+        } else {
+          console.error(error);
+        }
+        return;
+      },
     }
   );
 
